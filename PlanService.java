@@ -1,0 +1,14 @@
+package hng_java_boilerplate.plans.service;
+
+import hng_java_boilerplate.plans.dtos.AllPlansDto;
+import hng_java_boilerplate.plans.dtos.CreatePlanDto;
+import hng_java_boilerplate.plans.dtos.PlanResponse;
+import org.springframework.http.ResponseEntity;
+
+public interface PlanService {
+    ResponseEntity<PlanResponse> create(CreatePlanDto createPlanDto);
+    ResponseEntity<AllPlansDto> findAll();
+
+    ResponseEntity<PlanResponse> getPlan(String id);
+}
+
