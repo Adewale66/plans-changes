@@ -47,8 +47,13 @@ public class PlanServiceImpl implements PlanService {
     }
 
     @Override
+    public Optional<Plan> findOne(String id) {
+        return planRepository.findById(id);
+    }
+
+    @Override
     public ResponseEntity<PlanResponse> getPlan(String id) {
-        Optional<Plan> plan = planRepository.findById(id);
+        Optional<Plan> plan = findOne(id);
         if (plan.isEmpty()) {
             throw new PlanNotFoundException("Pricing Plan not found");
         }
