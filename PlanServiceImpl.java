@@ -43,7 +43,7 @@ public class PlanServiceImpl implements PlanService {
     @Override
     public ResponseEntity<AllPlansDto> findAll() {
         List<Plan> plans = planRepository.findAll();
-        return ResponseEntity.status(200).body(new AllPlansDto(plans, 200, "Pricing plans retrieved successfully"));
+        return ResponseEntity.status(200).body(new AllPlansDto(plans, 200, "Billing plans retrieved successfully"));
     }
 
     @Override
@@ -57,7 +57,7 @@ public class PlanServiceImpl implements PlanService {
         if (plan.isEmpty()) {
             throw new PlanNotFoundException("Pricing Plan not found");
         }
-        return ResponseEntity.status(200).body(new PlanResponse(plan.get(), 200, "Pricing plan retrieved successfully"));
+        return ResponseEntity.status(200).body(new PlanResponse(plan.get(), 200, "Billing plan retrieved successfully"));
     }
 }
 
