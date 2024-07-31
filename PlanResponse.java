@@ -3,10 +3,8 @@ package hng_java_boilerplate.plans.dtos;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import hng_java_boilerplate.plans.entity.Plan;
 
-import java.util.List;
-
-public record AllPlansDto(
-        List<Plan> data,
+public record PlanResponse(
+        Plan data,
         @JsonProperty("status")
         int statusCode,
         String message
